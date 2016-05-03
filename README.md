@@ -2,9 +2,9 @@
 
 You need the matlab software to solve optimization problems, [CVX: Matlab Software for Disciplined Convex Programming](http://cvxr.com/cvx/), to run most of this scripts.
 
-The file figs_paper.m produces all the figures in the paper that are not schematics.
+The file figs_paper.m produces all the figures in the paper, which are not schematics.
 
-You should start with the file example_reconstruction.m, which of course have an example of reconstruction using the code.
+You should start with the file example_reconstruction.m, which of course has an example of reconstruction using the code.
 
 The central functions are:
 predator_prey_integrator.m, which integrates the dynamics, and
