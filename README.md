@@ -12,11 +12,11 @@ fun_net_recons.m, which takes measurements of the dynamics at discrete intervals
 
 Each one of the figures has a script which makes the necessary calculations and saves the data used in the figures.
 
-Fig1 - example_reconstruction.m
-Fig2 - delta_equi_error.m
-Fig3 - schematics, no script
-Fig4 - no script,
-Fig5 - multi_vs_single.m
-Fig6 - nExp_error.m
-Fig7 - noise.m
+* Fig1 - example_reconstruction.m
+* Fig2 - delta_equi_error.m
+* Fig3 - schematics, no script
+* Fig4 - no script,
+* Fig5 - multi_vs_single.m
+* Fig6 - nExp_error.m
+* Fig7 - noise.m
 
