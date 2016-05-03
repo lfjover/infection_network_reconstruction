@@ -10,7 +10,7 @@ The central functions are:
 predator_prey_integrator.m, which integrates the dynamics, and
 fun_net_recons.m, which takes measurements of the dynamics at discrete intervals and reconstructs the infection network M using cvx.
 
-Each one of the figures has a script which makes the necessary calculations and saves the data used in the figures.
+Each one of the figures has a script which makes the necessary calculations and saves the data used in the figure:
 
 * Fig1 - example_reconstruction.m
 * Fig2 - delta_equi_error.m
