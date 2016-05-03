@@ -1,6 +1,6 @@
 # infection_network_reconstruction
 
-You need the matlab software to solve optimization problems [CVX: Matlab Software for Disciplined Convex Programming](http://cvxr.com/cvx/)
+You need the matlab software to solve optimization problems, [CVX: Matlab Software for Disciplined Convex Programming](http://cvxr.com/cvx/), to run most of this scripts.
 
 The file figs_paper.m produces all the figures in the paper that are not schematics.
 
