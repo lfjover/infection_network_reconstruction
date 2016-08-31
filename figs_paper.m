@@ -165,3 +165,110 @@ ylabel('$\overline{Error}_{rec}$','interpreter','latex','fontsize',fs)
 setfigure(10,7,68,6)
 set(gca,'fontsize',8);
 %print('-dpdf','../manuscript/figures/error_vs_noise.pdf')
+
+%%
+%% error as a function of delta t and total time
+close all
+load('data/rec_steps_tfinal.mat')
+reconsErrorM = mean(reconsErrorA,3);
+
+figure
+width = 15;
+height = 12;
+fs = 25;
+setfigure(width,height,70,16)
+
+% error
+imagesc(flipud(reconsErrorM))
+hold on
+colormap jet
+colorbar
+
+%isoclines
+N_vector = [100 200 400];
+dt_iso = [0; 0.21];%rescale for the new x axis determined with set
+x_iso_mat = repmat(dt_iso*100,1,length(N_vector));
+y_iso_mat = [];
+for N = N_vector;
+    'heyt'
+    T = dt_iso*N;
+    y_iso = 23 - (T-10)./4; %rescale for the new x axis determined with set
+    y_iso_mat = [y_iso_mat ,y_iso];
+end
+plot(x_iso_mat, y_iso_mat, '-k', 'linewidth', 3)
+hold off
+
+% % text for isoclines 100 200 400
+% x = 0.08;
+% x_text = x*100;
+% N = 400;
+% y_text = 23 - (x*N-10)./4;
+% 
+% text(x_text+0.5, y_text, {'1000',  'meas.'},'fontweight', 'bold', ...
+%         'color', 'white','fontsize', 15)
+%     
+% x = 0.13;
+% x_text = x*100;
+% N = 500;
+% y_text = 23 - (x*N-10)./4;
+% 
+% text(x_text, y_text+1, {'500',  'meas.'},'fontweight', 'bold', ...
+%         'color', 'black','fontsize', 15)
+%     
+% x = 0.16;
+% x_text = x*100;
+% N = 250;
+% y_text = 23 - (x*N-10)./4;
+% 
+% text(x_text, y_text+1, {'250',  'meas.'},'fontweight', 'bold', ...
+%         'color', 'black','fontsize', 15)
+
+% text for isoclines 250 500 1000
+x = 0.17;
+x_text = x*100;
+N = 400;
+y_text = 23 - (x*N-10)./4;
+
+text(x_text, y_text-4.2, {'400',  'meas.'},'fontweight', 'bold', ...
+        'color', 'black','fontsize', 15)
+    
+x = 0.17;
+x_text = x*100;
+N = 200;
+y_text = 23 - (x*N-10)./4;
+
+text(x_text, y_text-2.8, {'200',  'meas.'},'fontweight', 'bold', ...
+        'color', 'black','fontsize', 15)
+    
+x = 0.17;
+x_text = x*100;
+N = 100;
+y_text = 23 - (x*N-10)./4;
+
+text(x_text, y_text-2, {'100',  'meas.'},'fontweight', 'bold', ...
+        'color', 'black','fontsize', 15)
+
+flip_tfinalV = fliplr(tfinalV)
+set(gca,'ytick',1:4:length(tfinalV),'yticklabel',flip_tfinalV(1:4:end),...
+       'xtick',1:4:length(stepsV),'xticklabel',stepsV(1:4:end)*dt,...
+       'fontsize',15)
+xlabel('$\Delta t$ (hours)', 'interpreter', 'latex', 'fontsize', fs)
+ylabel('Total hours', 'interpreter', 'latex', 'fontsize', fs)
+title('$\overline{Error}_{rec}$',...
+        'interpreter','latex','fontsize',fs)
+%print('-dpdf','../manuscript/submission_rsopen/figures/error_deltat_finalt.pdf')
+%% Error vs delta t for fixed number of measurements
+close all
+load('data/rec_deltat.mat')
+reconsErrorM = mean(reconsErrorA,3);
+
+figure
+fs = 18;
+setfigure(10,7,68,6)
+semilogx(stepsV(10:end)*dt,reconsErrorM(:,10:end),'o-','linewidth',3)
+legend({'100 Meas.','200 Meas.','400 Meas.'})
+legend boxoff
+xlabel('$\Delta t$ (hours)','fontsize',fs,'interpreter','latex')
+ylabel('$\overline{Error}_{rec}$',...
+        'interpreter','latex','fontsize',fs)
+%print('-dpdf','../manuscript/submission_rsopen/figures/er

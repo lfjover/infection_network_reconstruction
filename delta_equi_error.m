@@ -2,7 +2,6 @@
 clear all
 load('data/params/params_feasible')
 
-
 steps = 10;
 tfinal = 96;
 matV = 1:20:100;

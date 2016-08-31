@@ -19,4 +19,5 @@ Each one of the figures has a script which makes the necessary calculations and 
 * Fig5 - multi_vs_single.m
 * Fig6 - nExp_error.m
 * Fig7 - noise.m
+* Fig8 - steps_tfinal_recons.m, fixed_nMeas.m
 
